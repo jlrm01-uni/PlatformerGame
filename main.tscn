@@ -82,10 +82,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 22.0
-margin_top = -434.0
-margin_right = 442.0
-margin_bottom = -4.0
+margin_left = 1046.0
+margin_top = 166.0
+margin_right = 1466.0
+margin_bottom = 596.0
 custom_constants/margin_right = 50
 custom_constants/margin_bottom = 50
 
