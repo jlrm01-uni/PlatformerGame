@@ -7,7 +7,7 @@
 [ext_resource path="res://ingsat_100_pixels.tres" type="DynamicFont" id=5]
 [ext_resource path="res://levels/level.gd" type="Script" id=6]
 [ext_resource path="res://GoalFlag.tscn" type="PackedScene" id=7]
-[ext_resource path="res://levels/level2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://GameOver.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 18, 0, 18, 18, 0, 18 )
@@ -139,10 +139,10 @@ tile_set = SubResource( 1 )
 cell_size = Vector2( 18, 18 )
 collision_mask = 34
 format = 1
-tile_data = PoolIntArray( 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0 )
+tile_data = PoolIntArray( 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 1, 0, 196620, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 327684, 1, 0, 327685, 1, 0, 327686, 1, 0, 327687, 1, 0, 327688, 1, 0, 327689, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 1, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 77, 42 )
+position = Vector2( 216, 40 )
 jump_force = 400
 
 [node name="coins" type="Node2D" parent="."]
@@ -162,20 +162,20 @@ custom_constants/margin_left = 20
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 69.0
-margin_bottom = 50.0
+margin_right = 119.0
+margin_bottom = 130.0
 
 [node name="CoinBagLabel" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
-margin_right = 18.0
-margin_bottom = 30.0
+margin_right = 68.0
+margin_bottom = 110.0
 custom_fonts/font = ExtResource( 5 )
 text = "0"
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer"]
-margin_left = 22.0
-margin_right = 49.0
-margin_bottom = 30.0
+margin_left = 72.0
+margin_right = 99.0
+margin_bottom = 110.0
 rect_min_size = Vector2( 27, 0 )
 texture = ExtResource( 4 )
 stretch_mode = 1
