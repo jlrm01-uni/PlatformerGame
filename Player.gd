@@ -53,3 +53,6 @@ func set_idle(value):
 		if is_on_floor():
 			idle_timer.start()
 			$Label.visible = false
+
+func jump(boost=1):
+	velocity.y = - jump_force * boost

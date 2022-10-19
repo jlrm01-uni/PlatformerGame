@@ -9,4 +9,5 @@ func _ready() -> void:
 func _on_GoalFlag_body_entered(body: Node) -> void:
 	if body.name == "Player":
 		if scene_to_load != null:
-			get_tree().change_scene_to(scene_to_load)
+			TransitionManager.transition_to(scene_to_load)
+			
