@@ -7,6 +7,8 @@ export (int) var jump_force = 1800
 onready var sprite = $Sprite
 onready var idle_timer = $IdleTimer
 
+var jump_particles_scene = load("res://jump_particles.tscn")
+
 var velocity: Vector2 = Vector2()
 
 # Called when the node enters the scene tree for the first time.
@@ -35,6 +37,7 @@ func _physics_process(delta: float) -> void:
 		if is_on_floor():
 			velocity.y = -jump_force
 			set_idle(false)
+			show_jumping_particles()
 			
 	velocity.y = velocity.y + GRAVITY * delta
 		
@@ -43,6 +46,14 @@ func _physics_process(delta: float) -> void:
 	if velocity.y != 0 and not is_on_floor():
 		idle_timer.start()
 
+func show_jumping_particles():
+	var instance = jump_particles_scene.instance()
+	
+	instance.position = self.global_position
+	instance.emitting = true
+	
+	get_tree().root.add_child(instance)
+	
 func _on_IdleTimer_timeout():
 	set_idle(true)
 
