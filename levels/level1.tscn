@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/tiles_packed.png" type="Texture" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://GoalFlag.tscn" type="PackedScene" id=7]
 [ext_resource path="res://levels/level2.tscn" type="PackedScene" id=8]
 [ext_resource path="res://JumpPad.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Spikey.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 18, 0, 18, 18, 0, 18 )
@@ -149,7 +150,7 @@ jump_force = 400
 [node name="coins" type="Node2D" parent="."]
 
 [node name="coin" parent="coins" instance=ExtResource( 3 )]
-position = Vector2( 33, 45 )
+position = Vector2( 15, 45 )
 rotation = -2.61799
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -188,3 +189,6 @@ scene_to_load = ExtResource( 8 )
 
 [node name="JumpPad" parent="." instance=ExtResource( 9 )]
 position = Vector2( -25, 46 )
+
+[node name="Spikey" parent="." instance=ExtResource( 10 )]
+position = Vector2( 44, 52 )
