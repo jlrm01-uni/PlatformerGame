@@ -51,16 +51,23 @@ func _on_IdleTimer_timeout():
 	set_idle(true)
 
 func set_idle(value):
-	if value:
-		$Label.visible = true
-	else:
-		if is_on_floor():
-			idle_timer.start()
-			$Label.visible = false
+	if not is_disabled:
+		if value:
+			$Label.visible = true
+		else:
+			if is_on_floor():
+				idle_timer.start()
+				$Label.visible = false
 
 func jump(boost=1):
 	velocity.y = - jump_force * boost
 
 func die():
-	print("I'm supposed to be dying!")
+	if is_dying:
+		return
+	else:
+		is_dying = true
+		is_disabled = true
+		
+	get_tree().call_group("Level", "show_death_animation")
 	

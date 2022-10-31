@@ -133,7 +133,7 @@ points = PoolVector2Array( 0, 0, 18, 0, 18, 18, 0, 18 )
 } ]
 4/z_index = 0
 
-[node name="level" type="Node2D"]
+[node name="level" type="Node2D" groups=["Level"]]
 script = ExtResource( 6 )
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -165,8 +165,8 @@ custom_constants/margin_left = 20
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 119.0
-margin_bottom = 130.0
+margin_right = 172.0
+margin_bottom = 218.0
 
 [node name="CoinBagLabel" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
@@ -188,7 +188,7 @@ position = Vector2( 120, 29 )
 scene_to_load = ExtResource( 8 )
 
 [node name="JumpPad" parent="." instance=ExtResource( 9 )]
-position = Vector2( -25, 46 )
+position = Vector2( -45, 46 )
 
 [node name="Spikey" parent="." instance=ExtResource( 10 )]
 position = Vector2( 44, 52 )
