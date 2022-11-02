@@ -12,6 +12,8 @@ var velocity: Vector2 = Vector2()
 var is_dying = false
 export (bool) var is_disabled = false
 
+var jump_particle_scene = load("res://jump_particles.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Label.visible = false
@@ -39,6 +41,7 @@ func _physics_process(delta: float) -> void:
 			if is_on_floor():
 				velocity.y = -jump_force
 				set_idle(false)
+				show_jumping_particles()
 				
 	velocity.y = velocity.y + GRAVITY * delta
 		
@@ -70,4 +73,13 @@ func die():
 		is_disabled = true
 		
 	get_tree().call_group("Level", "show_death_animation")
+	
+func show_jumping_particles():
+	var instance = jump_particle_scene.instance()
+	
+	instance.position = self.global_position
+	instance.emitting = true
+	
+	get_tree().root.add_child(instance)
+	
 	
