@@ -17,6 +17,7 @@ var jump_particle_scene = load("res://jump_particles.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Label.visible = false
+	add_to_group("Player")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

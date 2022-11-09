@@ -47,6 +47,7 @@ margin_bottom = -13.0
 text = "Zzz"
 
 [node name="Light2D" type="Light2D" parent="."]
+visible = false
 texture = SubResource( 3 )
 texture_scale = 3.0
 shadow_enabled = true
