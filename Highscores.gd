@@ -1,7 +1,7 @@
 extends Control
-
 onready var http_request: HTTPRequest = $HTTPRequest
-onready var item_list: ItemList = $MarginContainer/ItemList
+
+onready var item_list: ItemList = $CanvasLayer/MarginContainer/ItemList
 
 var url = "http://127.0.0.1:5500/highscores_json"
 
