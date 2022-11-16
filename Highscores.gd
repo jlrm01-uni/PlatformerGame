@@ -3,6 +3,8 @@ extends Control
 onready var http_request: HTTPRequest = $HTTPRequest
 onready var item_list: ItemList = $MarginContainer/ItemList
 
+export (PackedScene) var next_scene = null
+
 var url = "http://127.0.0.1:5500/highscores_json"
 
 func _ready() -> void:
@@ -24,3 +26,7 @@ func setup_highscore_list(highscores):
 		item_list.add_item(username + ": " + str(score))
 	
 	
+
+
+func _on_Timer2_timeout() -> void:
+	TransitionManager.transition_to(next_scene)
